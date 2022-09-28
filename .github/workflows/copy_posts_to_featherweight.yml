@@ -1,0 +1,25 @@
+name: Push Folder
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Push _posts folder
+      uses: crykn/copy_folder_to_another_repo_action@v1.0.6
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_folder: '_posts'
+        destination_repo: 'Cutwell/featherweight'
+        destination_folder: '_posts'
+        user_email: '22395357+Cutwell@users.noreply.github.com'
+        user_name: 'Cutwell'
+        commit_msg: '[GHA] Update _posts from main blog.'
+        destination_branch: 'main'

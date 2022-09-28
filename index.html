@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<p>Hi, I'm {{ site.author }}!</p>
+<p>{% include_relative _pages/about.md %}</p>
+<ul>{% for link in site.personals %}<li>{{ link.name }}: <a href="{{ link.url }}">{{ link.url }}</a></li>{% endfor %}</ul>
+<i>Resume:</i>
+<p>{% for exp in site.resume %}{{ exp.title }}, {{ exp.company }}, {{exp.dates}}<br>{% endfor %}</p>
+<i>Blog posts:</i>
+<ul>{% for post in site.posts %}<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }} - {{ post.date | date: "%B %e, %Y" }}</a></li>{% endfor %}</ul>
+<footer>This blog is built using <a href="https://github.com/Cutwell/featherweight"><code>featherweight</code></a>, my ultra-lightweight theme for Jekyll.</footer>

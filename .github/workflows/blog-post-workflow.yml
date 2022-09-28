@@ -1,0 +1,17 @@
+name: Latest blog post workflow
+
+on:
+  push: # run on repo push
+  workflow_dispatch: # run workflow manually
+
+jobs:
+  update-readme-with-blog:
+    name: Update this repo's README with latest blog posts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Pull in github.io blog posts
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          feed_list: "https://cutwell.github.io/feed.xml"
