@@ -1,3 +1,1 @@
-I'm an MSc Artificial Intelligence graduate, working on open-source projects.
-
-My interests include machine learning and web development.
+I'm a graduate in MSc Artifical Intelligence, looking for opportunities to enter industry!
