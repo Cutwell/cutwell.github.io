@@ -1,11 +1,9 @@
 ---
 layout: default
 ---
-# Hi, I'm {{ site.author }}!
+# Hi, I'm Zachary.
 
 University of Plymouth alumni, working with [@Datatonic](https://datatonic.com/) in 2023.
-
-This site uses my [`Cutwell/featherweight`](https://github.com/Cutwell/featherweight) theme.
 
 {% capture contact %}{% include contact.md %}{% endcapture %}
 {{ contact | markdownify }}
