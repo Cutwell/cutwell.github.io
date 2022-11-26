@@ -4,7 +4,7 @@ name: Zachary's blog # (leave blank for no fallback/title element)
 # website author
 author: Zachary Smith
 
-description: A personal blog, detailing projects in AI, web design, and game development.
+description: My personal blog, detailing projects in AI, web design, and game development.
 
 lang: en # replace with ISO 639-1 Language Code for your language (or leave empty to omit the lang setting)
 
@@ -37,7 +37,7 @@ resume:
   - title: BSc Computer Science (1st)
     company: University of Plymouth
     dates: 2018-21
-  - title: MSc Artificial Intelligence
+  - title: MSc Artificial Intelligence (Distinction)
     company: University of Plymouth
     dates: 2021-22 
 
