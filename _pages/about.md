@@ -1,1 +1,1 @@
-I'm a graduate in MSc Artifical Intelligence, looking for opportunities to enter industry!
+University of Plymouth alumni, working with [@Datatonic](https://datatonic.com/) in 2023.
