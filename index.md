@@ -7,7 +7,8 @@ University of Plymouth alumni, working with [@Datatonic](https://datatonic.com/)
 
 This site uses my [`Cutwell/featherweight`](https://github.com/Cutwell/featherweight) theme.
 
-{% markdown _pages/contact.md %}
+{% capture contact %}{% include contact.md %}{% endcapture %}
+{{ contact | markdownify }}
 
 _Blog posts_
 {% if site.compression.blogs and site.posts %}
