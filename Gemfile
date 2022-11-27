@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
 # load the featherweight theme
-gem "featherweight"
+gem 'featherweight', '~> 0.7'
