@@ -1,4 +1,4 @@
-remote_theme: Cutwell/featherweight
+theme: featherweight
 
 # website title (appears in tab and headers if not overriden by blog title)
 name: Zachary's Blog # (leave blank for no fallback/title element)
