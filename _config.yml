@@ -44,3 +44,46 @@ home-link-text: Return Home # text used for home link displayed on posts when ho
 
 google-site-verification: # add your verification token here (https://developers.google.com/site-verification/)
 
+
+##### JEKYLL SETTINGS #####
+permalink: /:title/
+
+plugins:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-zopfli # github auto-compresses to .gz, but Zopfli offers greater compression + saves time by pre-compressing instead of doing it on-the-fly
+  - jekyll-brotli # Google compression that outperforms Zopfli, and has good support (although less than .gz, hence using both to provice fallback)
+
+include: ['_pages']
+
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+
+# use https://github.com/penibelst/jekyll-compress-html for extra bandwidth compression
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  startings: [html, head]
+  profile: false
+  blanklines: false
+  ignore:
+    envs: []
+
+# RSS feed settings
+feed_items: 10
+feed_update_period: daily
+feed_update_frequency: 1
