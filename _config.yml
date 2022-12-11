@@ -54,7 +54,7 @@ plugins:
   - jekyll-zopfli # github auto-compresses to .gz, but Zopfli offers greater compression + saves time by pre-compressing instead of doing it on-the-fly
   - jekyll-brotli # Google compression that outperforms Zopfli, and has good support (although less than .gz, hence using both to provice fallback)
 
-include: ['_pages']
+include: ['_posts']
 
 kramdown:
   # Use GitHub flavored markdown, including triple backtick fenced code blocks
