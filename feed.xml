@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+>
+	<channel>
+		<title>Zachary&apos;s Blog</title>
+		<description>My personal blog, detailing projects in AI, web design, and game development.</description>		
+		<sy:updatePeriod>daily</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+		<link>https://cutwell.github.io/</link>
+		<atom:link href="https://cutwell.github.io//feed.xml" rel="self" type="application/rss+xml" />
+		<lastBuildDate>Sun, 11 Dec 2022 00:00:00 +0000</lastBuildDate>
+
+        <!-- update default to max number of posts to render -->
+		
+		
+			<item>
+				<title>Ai Art Vs Artists</title>
+				
+				
+					<description>&lt;h1 id=&quot;too-dangerous-to-live-too-unregulated-to-die&quot;&gt;Too dangerous to live, too unregulated to die&lt;/h1&gt;
+&lt;p&gt;How stable diffusion is disrupting artists livelihoods, and why “AI Creatives” won’t stop ripping off their favourite artwork.&lt;/p&gt;
+</description>
+				
+				<pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
+				<link>https://cutwell.github.io//ai-art-vs-artists/</link>
+				<guid isPermaLink="true">https://cutwell.github.io//ai-art-vs-artists/</guid>
+			</item>
+		
+			<item>
+				<title>Approximating the alpha shape of spatial data using Python and Shapely.</title>
+				
+				
+					<description>&lt;p&gt;&lt;img src=&quot;/_posts/2022-08-01-spatial-data-boundary/outlined.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+				
+				<pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+				<link>https://cutwell.github.io//spatial-data-boundary/</link>
+				<guid isPermaLink="true">https://cutwell.github.io//spatial-data-boundary/</guid>
+			</item>
+		
+			<item>
+				<title>Using a neural network to augment wind data.</title>
+				
+				
+					<description>&lt;p&gt;&lt;img src=&quot;/_posts/2022-07-27-neural-network-augmentation/wind.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+				
+				<pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
+				<link>https://cutwell.github.io//neural-network-augmentation/</link>
+				<guid isPermaLink="true">https://cutwell.github.io//neural-network-augmentation/</guid>
+			</item>
+		
+			<item>
+				<title>Using neural networks to colourise images from the Opportunity Mars Rover.</title>
+				
+				
+					<description>&lt;p&gt;&lt;img src=&quot;/_posts/2021-08-01-opportunity-rover-colourised/1.png&quot; alt=&quot;figure 0&quot; title=&quot;figure 0&quot; /&gt;&lt;/p&gt;
+</description>
+				
+				<pubDate>Sun, 01 Aug 2021 00:00:00 +0000</pubDate>
+				<link>https://cutwell.github.io//opportunity-rover-colourised/</link>
+				<guid isPermaLink="true">https://cutwell.github.io//opportunity-rover-colourised/</guid>
+			</item>
+		
+	</channel>
+</rss>

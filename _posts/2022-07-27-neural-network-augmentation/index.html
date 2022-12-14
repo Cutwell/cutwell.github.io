@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using a neural network to augment wind data.</title>
+<link rel="apple-touch-icon" sizes="180x180" href="https://cutwell.github.io//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cutwell.github.io//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cutwell.github.io//favicon-16x16.png">
+<link rel="manifest" href="https://cutwell.github.io//site.webmanifest">
+<link rel="mask-icon" href="https://cutwell.github.io//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="My personal blog, detailing projects in AI, web design, and game development.">
+<link rel="alternate" type="application/rss+xml" title="Zachary's Blog" href="https://cutwell.github.io//feed.xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://cutwell.github.io//sitemap.xml">
+<link rel="canonical" href="https://cutwell.github.io//_posts/2022-07-27-neural-network-augmentation/">
+<meta name="google-site-verification" content="">
+<meta property="og:title" content="Using a neural network to augment wind data.">
+<meta property="og:url" content="https://cutwell.github.io//_posts/2022-07-27-neural-network-augmentation/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Zachary's Blog">
+<meta property="og:description" content="My personal blog, detailing projects in AI, web design, and game development.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Using a neural network to augment wind data.">
+<meta name="twitter:url" content="https://cutwell.github.io//_posts/2022-07-27-neural-network-augmentation/">
+<meta name="twitter:description" content="My personal blog, detailing projects in AI, web design, and game development.">
+<style>body { max-width: 80ch; padding: 3em 1em; margin: auto; line-height: 1.6; font-size: 1.25em; font-family: Helvetica; } .d { font-size: medium; color: grey; } img { max-width: 100%; height: auto }</style>
+</head>
+<body>
+<a style="position:absolute;top:0;left:0;margin:1em;color:inherit;font-size:1em;" href="https://cutwell.github.io/">Return Home</a><h1>Using a neural network to augment wind data.</h1>
+<i>Written on </i> <br><i class="d"> 3 minutes to read. </i><p><img src="/_posts/2022-07-27-neural-network-augmentation/wind.png" alt="" width="375" height="242" loading="lazy"></p>
+<p>My current dissertation project focusses on genetic optimisation of offshore wind farm site locations. Part of this optimisation is to maximise the energy efficiency of the wind farm, by maximising the available potential wind energy within the site. As I was focussing on a search space just off the U.K. east coast, I needed to gather historic wind data that fit this area.</p>
+<!--more--><p>An issue I encountered whilst researching datasets for this project was that the data was not available in the resolution required. I found that the US Physical Sciences Laboratory (USPSL) offered historic wind data, but at a global scale. In order to use this data, I needed to increase the resolution of the to fit the scale of my search space.</p>
+<p>At a global scale, the data looked suitably expansive:</p>
+<p><img src="/_posts/2022-07-27-neural-network-augmentation/wind_world.png" alt="" width="408" height="184" loading="lazy"></p>
+<p>But when zoomed into our search space, the resolution was clearly insufficient:</p>
+<p><img src="/_posts/2022-07-27-neural-network-augmentation/wind_uk.png" alt="" width="414" height="209" loading="lazy"></p>
+<hr>
+<h2 id="designing-a-neural-network">Designing a neural network</h2>
+<p>Regression is a machine learning technique to predict new data based on known data. This can be predicting weather based on previous history, predicting stock-market futures based on previous performance, or increasing a dataset resolution based on lower resolution data.</p>
+<p>Our data is well-suited to regression, as we can utilise large amounts of low-resolution data to train our model at a global scale, then zoom into a particular search space and generate a desired amount of predicted data.</p>
+<p>I decided to use the TensorFlow framework for this problem. Our model will simply convert longitude / latitude coordinates into wind data for given coordinates. Although this transformation is simple, we will need the model to have sufficient layers to learn complex spatial relationships / patterns that can be observed in our dataset.</p>
+<p>After experimentation with different numbers of layers and parameters, I settled on this 50k parameter sequential model, with 6 hidden layers:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 32)                96        
+_________________________________________________________________
+dense_1 (Dense)              (None, 64)                2112      
+_________________________________________________________________
+dense_2 (Dense)              (None, 128)               8320      
+_________________________________________________________________
+dense_3 (Dense)              (None, 256)               33024     
+_________________________________________________________________
+dense_4 (Dense)              (None, 32)                8224      
+_________________________________________________________________
+dense_5 (Dense)              (None, 16)                528       
+_________________________________________________________________
+dense_6 (Dense)              (None, 8)                 136       
+_________________________________________________________________
+dense_7 (Dense)              (None, 1)                 9         
+=================================================================
+Total params: 52,449
+Trainable params: 52,449
+Non-trainable params: 0
+_________________________________________________________________
+</code></pre></div></div>
+<p>When asked to emulate the dataset, in order to test if spatial relationships were learnt during training, the model gave good performance:</p>
+<table>
+<thead><tr>
+<th style="text-align: center"> </th>
+<th style="text-align: center"> </th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align: center"><img src="/_posts/2022-07-27-neural-network-augmentation/wind_plot.png" alt="" width="403" height="273" loading="lazy"></td>
+<td style="text-align: center"><img src="/_posts/2022-07-27-neural-network-augmentation/wind_pred_plot.png" alt="" width="387" height="273" loading="lazy"></td>
+</tr>
+<tr>
+<td style="text-align: center">Training dataset</td>
+<td style="text-align: center">Model prediction</td>
+</tr>
+</tbody>
+</table>
+<p>We then applied the model to predict wind data specifically for our search space, at the same resolution as our bathymetric data:</p>
+<table>
+<thead><tr>
+<th style="text-align: center"> </th>
+<th style="text-align: center"> </th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align: center"><img src="/_posts/2022-07-27-neural-network-augmentation/bathymetric.png" alt="" width="365" height="231" loading="lazy"></td>
+<td style="text-align: center"><img src="/_posts/2022-07-27-neural-network-augmentation/wind.png" alt="" width="375" height="242" loading="lazy"></td>
+</tr>
+<tr>
+<td style="text-align: center">Bathymetric data</td>
+<td style="text-align: center">Wind data</td>
+</tr>
+<tr>
+<td style="text-align: center"><img src="/_posts/2022-07-27-neural-network-augmentation/bathymetric_zoomed.png" alt="" width="365" height="245" loading="lazy"></td>
+<td style="text-align: center"><img src="/_posts/2022-07-27-neural-network-augmentation/wind_zoomed.png" alt="" width="375" height="256" loading="lazy"></td>
+</tr>
+<tr>
+<td style="text-align: center">Zoomed Bathymetric data</td>
+<td style="text-align: center">Zoomed Wind data</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="conclusions">Conclusions</h1>
+<p>Obtaining appropriate wind data was a vital goal for advancing my dissertation project, so I’m pleased to have achieved such strong results.</p>
+<p>The next goal will be to implement this data into our genetic optimisation - a further optimisation I’ve already made has been to pre-process wind data for the search space, instead of dynamically generate data during optimisation. Speeding up solution evaluation enables us to increase our population size and generations, which lets us form more precise pareto fronts.</p>
+<br><hr>
+<ul>
+<li>GitHub: <a href="https://github.com/Cutwell">https://github.com/Cutwell</a>
+</li>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/zacharysmith5/">https://www.linkedin.com/in/zacharysmith5/</a>
+</li>
+</ul>
+<i id="lt" class="d"></i><br> <i id="ps" class="d"></i> <script> document.getElementById("ps").innerHTML="Size: "+document.documentElement.outerHTML.length+" bytes"; window.onload=function(){document.getElementById("lt").innerHTML="Load time: "+(window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart)+"ms"}; </script>
+</body>
+</html>
