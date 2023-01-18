@@ -1,13 +1,9 @@
 ---
 layout: post
 title: Too dangerous to live, too unregulated to die.
-categories: [AI, opinion]
+categories: [AI, Opinion]
 ---
-
-# Too dangerous to live, too unregulated to die
- How stable diffusion is disrupting artists' livelihoods, and why "AI Creatives" won't stop ripping off their favourite artwork.
-
----
+_How stable diffusion is disrupting artists' livelihoods, and why "AI Creatives" won't stop ripping off their favourite artwork._
 
 Let me start by saying I think stable diffusion, and similar models, are extremely impressive state-of-the-art. As we'll conclude later, these models are not inherently so terrible that our only option is to outlaw the technology, we simply need to clearly define how copyrighted material (such as original art) should or should not be used in the creation of models, or if the companies profiting from these models are accountable for breaches of copyright (or loss of livelihood) when their users disingenuously imitate known artists.
 
