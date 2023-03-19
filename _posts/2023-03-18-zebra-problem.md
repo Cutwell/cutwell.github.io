@@ -4,6 +4,8 @@ title: 🦓 Can GPT-4 solve a logic puzzle?
 categories: [AI]
 ---
 
+![A zebra solving a jigsaw puzzle, DALLE2](/_posts/2023-03-19-zebra-problem/DALLE-a-zebra-solving-a-jigsaw-puzzle.png)
+
 #### Constraint satisfaction using ChatGPT-3 and GPT-4
 
 GPT-3 (the basis for ChatGPT) and GPT-4 are making headlines for their problem solving abilities and next-level conversational responses. We decided to test these models against a well-known logic problem called the Zebra Problem. Commonly misattributed to Carol Lewis or Albert Einstein, it was published in Life International magazine on December 17, 1962. It has been used as a popular benchmark for testing constraint satisfaction algorithms.
