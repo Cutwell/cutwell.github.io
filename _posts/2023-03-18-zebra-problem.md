@@ -52,7 +52,7 @@ We tested the following language models on the OpenAI platform: `GPT-3.5`, `Chat
 
 ### GPT-3.5
 
-<details>
+<details markdown="1">
 <summary>Complete GPT-3.5 response</summary>
 
 #### Complete GPT-3.5 response
@@ -117,7 +117,7 @@ Therefore, the Norwegian drinks water and the Japanese owns the zebra.
 
 ### ChatGPT-3
 
-<details>
+<details markdown="1">
 <summary>Complete ChatGPT-3 response</summary>
 
 #### Complete ChatGPT-3 response
@@ -205,7 +205,7 @@ In summary, based on the given information, we can conclude that the person who 
 
 ### GPT-4
 
-<details>
+<details markdown="1">
 <summary>Complete GPT-4 response</summary>
 
 #### Complete GPT-4 response
@@ -334,7 +334,7 @@ Who owns the zebra? The Japanese owns the zebra.
 
 ### ChatGPT-4
 
-<details>
+<details markdown="1">
 <summary>Complete ChatGPT-4 response</summary>
 
 #### Complete ChatGPT-4 response
