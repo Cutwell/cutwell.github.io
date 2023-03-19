@@ -1,3 +1,3 @@
 source "https://rubygems.org"
 
-gem 'featherweight', '~> 0.7.11'
+gem 'featherweight', '~> 0.7.12'
