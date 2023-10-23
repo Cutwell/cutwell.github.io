@@ -1,6 +1,6 @@
 # Hi, I'm Zachary.
 
-Machine Learning Engineer [@Datatonic](https://datatonic.com/) | [Partnered](https://www.langchain.com/partners) with [@LangChain](https://www.langchain.com/) and working on Generative AI.
+Generative AI and Machine Learning Engineer working [@Datatonic](https://datatonic.com/).
 
 * GitHub: [https://github.com/Cutwell][1]
 * LinkedIn: [https://www.linkedin.com/in/zacharysmith5/][2]
