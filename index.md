@@ -4,7 +4,7 @@ title: Zachary's Blog
 ---
 # Hi, I'm Zachary.
 
-Generative AI and Machine Learning Engineer working [@Datatonic](https://datatonic.com/); partnered with [LangChain](https://www.langchain.com/partners). 
+Generative AI and Machine Learning Engineer working [@Datatonic](https://datatonic.com/).
 
 {% capture contact %}{% include contact.md %}{% endcapture %}
 {{ contact | markdownify }}
