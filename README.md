@@ -1,6 +1,6 @@
-# Hi, I'm Zachary Smith!
+# Hi, I'm Zachary.
 
-University of Plymouth alumni, working with [@Datatonic](https://datatonic.com/) in 2023.
+Machine Learning Engineer [@Datatonic](https://datatonic.com/) | [Partnered](https://www.langchain.com/partners) with [@LangChain](https://www.langchain.com/) and working on Generative AI.
 
 * GitHub: [https://github.com/Cutwell][1]
 * LinkedIn: [https://www.linkedin.com/in/zacharysmith5/][2]
