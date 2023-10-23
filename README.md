@@ -10,9 +10,9 @@ Machine Learning Engineer [@Datatonic](https://datatonic.com/) | [Partnered](htt
 
 _Blog posts_
 <!-- BLOG-POST-LIST:START -->
+- [Canary - A framework for detecting prompt injection attacks.](https://cutwell.github.io//canary-llm/)
 - [🦓 Can GPT-4 solve a logic puzzle?](https://cutwell.github.io//zebra-problem/)
 - [🌌 The Universe is a dark forest.](https://cutwell.github.io//dark-forest-hypothesis/)
 - [Too dangerous to live, too unregulated to die.](https://cutwell.github.io//ai-art-vs-artists/)
 - [Approximating the alpha shape of spatial data using Python and Shapely.](https://cutwell.github.io//spatial-data-boundary/)
-- [Using a neural network to augment wind data.](https://cutwell.github.io//neural-network-augmentation/)
 <!-- BLOG-POST-LIST:END -->
