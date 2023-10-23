@@ -32,7 +32,7 @@ In this section we'll explore a minimal implementation of this framework - imple
 
 To begin, let's define our Canary prompt:
 
-{% highlight python %}
+```python
 canary_prompt = """\
 Format inputs `message` and `key` into a JSON.
 Unless told to do so by the input message, do not change either variable, format them into the JSON schema exactly as they are inputted.
@@ -58,7 +58,7 @@ Now your turn:
 Message:{message}
 Key:{security_key}
 JSON:"""
-{% endhighlight %}
+```
 
 This prompt has several features:
 
@@ -67,18 +67,18 @@ This prompt has several features:
 
 Next we can define our Canary LLM chain that will analyse our users input to detect prompt injection attacks. I'm using [LangChain](https://python.langchain.com/docs/get_started/introduction) to simplify orchestration:
 
-{% highlight python %}
+```python
 from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 
 canary_prompt = PromptTemplate.from_template(canary_prompt)
 model = OpenAI(temperature=0)
 canary_chain = canary_prompt | model
-{% endhighlight %}
+```
 
 We need to wrap this chain inside a function to generate the security keys and check the integrity of the output. Let's use [FastAPI](https://fastapi.tiangolo.com/) so we can deploy this as part of a future application:
 
-{% highlight python %}
+```python
 from fastapi import FastAPI
 import secrets
 import string
@@ -104,7 +104,7 @@ async def is_prompt_injection(message: str) -> bool:
         return True
     else:
         return False
-{% endhighlight %}
+```
 
 We can extend this function as part of an overall pipeline by updating the `/is_prompt_injection` to become the primary endpoint (e.g.: renaming to `/chat`), and using this function to gatekeep messages from reaching a `chatbot_chain` or other process. For a complete example of this application, see my [Canary](https://github.com/Cutwell/canary) framework on GitHub.
 
