@@ -4,7 +4,7 @@ title: Zachary's Blog
 ---
 # Hi, I'm Zachary.
 
-University of Plymouth alumni, working with [@Datatonic](https://datatonic.com/) in 2023.
+Machine Learning Engineer [@Datatonic](https://datatonic.com/) | [Partnered](https://www.langchain.com/partners) with [@LangChain](https://www.langchain.com/) and working on Generative AI.
 
 {% capture contact %}{% include contact.md %}{% endcapture %}
 {{ contact | markdownify }}
