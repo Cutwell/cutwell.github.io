@@ -8,6 +8,6 @@ Generative AI and Machine Learning Engineer working [@Datatonic](https://dataton
 [1]: https://github.com/Cutwell
 [2]: https://www.linkedin.com/in/zacharysmith5/
 
-_Recetn blog posts_
+_Recent blog posts_
 <!--START_SECTION:feed-->
 <!--END_SECTION:feed-->
